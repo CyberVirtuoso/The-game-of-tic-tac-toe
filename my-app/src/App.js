@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import styles from './App.module.css';
+import { Information, Field } from './components';
 
 export const App = () => {
+	const [currentPlayer, setCurrentPlayer] = useState('X');
+	const [isGameEnded, setIsGameEnded] = useState(false);
+	const [isDraw, setIsDraw] = useState(false);
+	const [field, setField] = useState(['', '', '', '', '', '', '', '', '']);
+
 	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
-		</div>
+		<>
+			<div className={styles.app}>
+				<h1>Игра крестики-нолики</h1>
+				<Information
+					isDraw={isDraw}
+					isGameEnded={isGameEnded}
+					currentPlayer={currentPlayer}
+				/>
+				<Field
+					field={field}
+					setField={setField}
+					currentPlayer={currentPlayer}
+					setCurrentPlayer={setCurrentPlayer}
+					isDraw={isDraw}
+					setIsDraw={setIsDraw}
+					isGameEnded={isGameEnded}
+					setIsGameEnded={setIsGameEnded}
+				/>
+			</div>
+		</>
 	);
 };

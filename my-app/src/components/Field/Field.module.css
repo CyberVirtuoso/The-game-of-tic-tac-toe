@@ -1,0 +1,21 @@
+.field {
+	display: flex;
+	width: 10%;
+	flex-wrap: wrap;
+	align-content: center;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.cell {
+	display: flex;
+	width: 30%;
+}
+
+.button {
+	margin-top: 2%;
+	background-color: white;
+	border-width: 1px;
+	border-radius: 8%;
+	width: 15%;
+}
