@@ -8,3 +8,5 @@ export const WIN_PATTERNS = [
 	[0, 4, 8],
 	[2, 4, 6], // Варианты побед по диагонали
 ];
+
+export const EMPTY_FIELDS = new Array(9).fill('');
